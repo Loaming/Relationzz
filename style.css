@@ -473,4 +473,25 @@ body{
     font-weight:700;
     color:#000;
   }
+  @media (max-width:1250px){
+    .container{
+      min-width:90%;
+    }
+  }
+  @media screen and (max-width:1000px){
+    .container{
+      min-width:90%;
+      flex-direction:column;
+    }
+    .nav{
+      flex-direction:column;
+      line-height:5;
+    }
+    .block{
+      width:90%;
+    }
+    .btn{
+      width:50%;
+    }
+  }
   
