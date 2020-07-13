@@ -11,20 +11,6 @@ body{
   *:after {
     box-sizing: border-box;
   }
-  @keyframes open
-{
-  from{font-size:0px;
-  }
-  to{font-size:22px;
-  }
- }
-@keyframes close
-{
-  from{font-size:22px; 
-  }
-  to{font-size:0px; 
-  }
-}
   
   h1, h2, h3, h4 ,h5 ,h6 {
     margin: 0;
@@ -123,15 +109,6 @@ body{
 #mobile_menu .mobile_btn:hover{
   box-shadow: 40px 16px 80px rgba(172, 143, 143, 0.05), 80px -40px 80px rgba(172, 143, 143, 0.13), 0px 80px 240px rgba(136, 116, 116, 0.25);
 }
-.nav_open{
-  animation-name: open;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-.nav_close{
-  animation-name: close;
-  animation-duration: 2s;
-}
 .mobile_nav_link{
   text-decoration:none;
   color:#000;
@@ -144,13 +121,20 @@ body{
   color:#73738D;
 }
 .mobile_nav{
-  display:flex;
+  display:none;
   flex-direction:column;
   background:transparent;
+  transition: all 2s linear;
 
   width:100%;
   height:auto;
-  font-size:0px; 
+  font-size:20px; 
+}
+.nav_open{
+  display:flex;
+}
+.nav_close{
+  display:none;
 }
 
 /* Intro */
