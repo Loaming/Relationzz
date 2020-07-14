@@ -244,13 +244,15 @@ body{
     font-weight:bold;
   }
   .section_subb{
-   display:block;
-    padding:0;
-    float:left;
-    line-height:3;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:flex-start;
   }
-  .section_subb2{
-    float:right;
+  .section_subb_subb{
+      display:flex;
+      flex-direction:column;
+      width:50%;
   }
   
   .section_table {
@@ -532,7 +534,13 @@ body{
       display:none!important;
     }
     .block{
+      display:flex;
+      justify-content: stretch;
+      flex-direction:column;
       width:90%;
+    }
+    .section_title{
+      text-align: center;
     }
     .btn{
       width:50%;
@@ -559,7 +567,8 @@ body{
       max-width:100%;
     }
     .intro_title{
-      font-size:20px;
+      font-size:40px;
+      text-align:center;
       font-weight:700;
       line-height:1.3;
     }
