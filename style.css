@@ -31,10 +31,87 @@ body{
   }
   /* Header */
   .header{
+    position: sticky;
+    top:0px;
+    padding-top:5px;
+    z-index:9999;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding-top:5px;
+
+    transition: all 1s linear;
+    background-color:#FFF; 
+}
+.mobile_btn {
+  /*   background: red; */
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu-icon {
+    margin-top:50px;
+    position: relative;
+    width: 60px;
+    height: 5px;
+    background-color: #000;
+  }
+  .normalize{
+    margin-bottom: 100px;
+  }
+  
+  .menu-icon::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content: '';
+    width: 60px;
+    height: 5px;
+    background-color: #000;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  
+  }
+  
+  .menu-icon::after {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: '';
+    width: 60px;
+    height: 5px;
+    background-color: #000;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  
+  }
+  
+  .menu-icon.menu-icon-active {
+    background-color: transparent;
+  }
+  
+  .menu-icon.menu-icon-active::before {
+    background-color: #fff;
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  }
+  
+  .menu-icon.menu-icon-active::after {
+    background-color: #fff;
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  }
+
+.head-full{
+background-color:rgb(0, 0, 0);
+width:100%;
+height:100vh;
+}
+.logo-off{
+display:none;
 }
 .header_logo{
   font-size:30px;
@@ -73,10 +150,12 @@ body{
   
   border:2px solid #1943EF;
   border-radius:33px;
-  transition: color .2s linear;
+  transition: all 1s linear;
 }
 .nav_link_active:hover {
-  background-color:#fce38a;
+  color:#000;
+  border:2px solid #000;
+  background-color:#0000f8;
 }
 .nav_link:after {
   content:"";
@@ -85,10 +164,10 @@ body{
   height:3px;
   display:none;
   
-  background-color:#fce38a;
+  background-color:#000;
 }
 .nav_link:hover {
-  color:#fce38a;
+  color:#000;
 }
 .nav_link:hover:after {
   display:block;
@@ -100,20 +179,13 @@ body{
   width:40%;
   display:none!important;
 }
-#mobile_menu .mobile_btn{
-  width:50%;
-  height:auto;
-  background-size:cover;
-  cursor:pointer;
-}
-#mobile_menu .mobile_btn:hover{
-  box-shadow: 40px 16px 80px rgba(172, 143, 143, 0.05), 80px -40px 80px rgba(172, 143, 143, 0.13), 0px 80px 240px rgba(136, 116, 116, 0.25);
-}
+
 .mobile_nav_link{
   text-decoration:none;
-  color:#000;
+  font-size:20px;
+  color:#FFF;
   
-  font-weight:700;
+  font-weight:400;
   line-height:3;
   transition: color .2s linear;
 }
@@ -128,7 +200,7 @@ body{
 
   width:100%;
   height:auto;
-  font-size:20px; 
+  font-size:20px;
 }
 .nav_open{
   display:flex;
@@ -160,17 +232,47 @@ body{
   color:#73738D;
   text-align:left;
 }
-.intro_subtitle:after {
-  content: "";
-  display:block;
+#pk{
+  display:flex;
+  flex-direction: row;
   width:100%;
-  height:60px;
-  margin:30px auto;
-  
-  background-color:#fff;
-  background: linear-gradient(to right, white 70%, blue 50%);
+}
+.pk1{
+  width:9%;
+  height:66px;
+  padding:20px;
+  z-index:2;
+  font-size:19px;
+  background-color:#FFF;
+  border-radius:100px;
+  transition: all 1s linear;
+  border:2px solid #fff;
   box-shadow: 40px 16px 80px rgba(172, 143, 143, 0.05), 80px -40px 80px rgba(172, 143, 143, 0.13), 0px 80px 240px rgba(136, 116, 116, 0.25);
-  border-radius:33px;
+}
+.btn_intro{
+  background-color:#1943EF;
+  color:#fff;
+  position:relative;
+  right:60px;
+  
+  z-index:3;
+  width:30%;
+  height:66px;
+  font-size:20px;
+  
+  border-radius:100px;
+  border:1px solid blue;
+  cursor:pointer;
+  transition: all 1s linear;
+}
+.btn_intro:hover{
+  background-color:#000;
+}
+.input_open{
+  width:70%;
+}
+.input_close{
+  width:9%;
 }
 .intro_plus{
   display:flex;
@@ -539,9 +641,6 @@ body{
       flex-direction:column;
       width:90%;
     }
-    .section_title{
-      text-align: center;
-    }
     .btn{
       width:50%;
     }
@@ -556,6 +655,12 @@ body{
     .mobile_btn{
       width:50%;
     }
+    .pk1{
+      font-size:10px;
+    }
+    .btn_intro{
+      width:50%;
+    }
     .intro_phone{
       display:none!important;
     }
@@ -567,8 +672,9 @@ body{
       max-width:100%;
     }
     .intro_title{
+      text-align:left;
       font-size:40px;
-      text-align:center;
+      
       font-weight:700;
       line-height:1.3;
     }
