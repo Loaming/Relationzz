@@ -33,13 +33,5 @@
           }
           open=!open;
         });
-
-    btn.addEventListener("click",function(){
-      if(close){
-         submit.classList.add("input_open");
-         submit.classList.remove("input_close");
-       }
-       open=!open;
-     })
   })
   

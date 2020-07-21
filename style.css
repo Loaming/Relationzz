@@ -238,7 +238,8 @@ display:none;
   width:100%;
 }
 .pk1{
-  width:9%;
+  position: absolute;
+  width:30%;
   height:66px;
   padding:20px;
   z-index:2;
@@ -253,7 +254,7 @@ display:none;
   background-color:#1943EF;
   color:#fff;
   position:relative;
-  right:60px;
+  left:70%;
   
   z-index:3;
   width:30%;
@@ -267,12 +268,6 @@ display:none;
 }
 .btn_intro:hover{
   background-color:#000;
-}
-.input_open{
-  width:70%;
-}
-.input_close{
-  width:9%;
 }
 .intro_plus{
   display:flex;
@@ -354,7 +349,7 @@ display:none;
   .section_subb_subb{
       display:flex;
       flex-direction:column;
-      width:50%;
+      width:60%;
   }
   
   .section_table {
@@ -621,16 +616,11 @@ display:none;
     font-weight:700;
     color:#000;
   }
-
-  @media screen and (max-width:1000px){
+  @media screen and (max-width:800px){
     .container{
       min-width:90%;
       flex-direction:row;
       align-items:flex-start;
-    }
-    .header_logo{
-      padding-top:20px;
-      font-size:50px;
     }
     .nav{
       display:none!important;
@@ -647,19 +637,19 @@ display:none;
     #mobile_menu{
       display:block!important;
     }
-  }
-  @media screen and (max-width:600px){
     .header_logo{
+      padding-top:20px;
       font-size:30px;
     }
     .mobile_btn{
       width:50%;
     }
-    .pk1{
-      font-size:10px;
+    #pk{
+      display:none;
     }
     .btn_intro{
-      width:50%;
+      width:40%;
+      left:50%;
     }
     .intro_phone{
       display:none!important;
@@ -683,6 +673,9 @@ display:none;
     }
     .slider_item{
       font-size:15px;
+    }
+    .footer{
+      width:80%;
     }
   }
   
